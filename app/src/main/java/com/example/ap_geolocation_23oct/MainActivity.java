@@ -33,10 +33,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady (GoogleMap googleMap){
         myMap = googleMap;
-        LatLng santacCruz=new LatLng(-17.715139133386796, -63.175946759898714);
+        LatLng miCasa=new LatLng(-17.715139133386796, -63.175946759898714);
         //myMap.addMarker(new MarkerOptions().position(santacCruz).title("Mi casita"));
-        myMap.moveCamera(CameraUpdateFactory.newLatLng(santacCruz));
-        MarkerOptions options = new MarkerOptions().position(santacCruz).title("Mi Casita");
+        MarkerOptions markerOptions = new MarkerOptions()
+                .position(miCasa)
+                .title("Mi Casa")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.casaic));
+        myMap.moveCamera(CameraUpdateFactory.newLatLng(miCasa));
+        MarkerOptions options = new MarkerOptions().position(miCasa).title("Mi Casita");
         options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         myMap.addMarker(options);
     }
